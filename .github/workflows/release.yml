@@ -1,0 +1,22 @@
+name: 'Auto-releases'
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Build tar.gz
+        run: |
+          sudo apt update
+          sudo apt install -y
+          cd $GITHUB_WORKSPACE
+          tar cfz nvChad.tar.gz *
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: 'auto-release'
+          files: nvChad.tar.gz
