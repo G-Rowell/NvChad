@@ -8,6 +8,7 @@ local M = {}
 
 M.options = {
   relativenumber = true,
+  shiftwidth = 3,
 }
 
 return M
