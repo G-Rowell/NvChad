@@ -26,7 +26,14 @@ vim.cmd[[ au InsertLeave * set relativenumber ]]
 
 -- examples below:
 
--- hooks.add("install_plugins", function(use)
+hooks.add("install_plugins", function(use)
+  use {
+    "williamboman/nvim-lsp-installer",
+    config = function()
+      require("custom.lspInstall")
+    end,
+  }
+end)
 --    use {
 --       "max397574/better-escape.nvim",
 --       event = "InsertEnter",
