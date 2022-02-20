@@ -11,4 +11,15 @@ M.options = {
   shiftwidth = 3,
 }
 
+M.plugins = {
+   install = {
+     {
+       "williamboman/nvim-lsp-installer",
+       config = function()
+         require("custom.lspInstall")
+       end,
+     },
+  },
+}
+
 return M
