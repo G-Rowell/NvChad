@@ -11,6 +11,10 @@ M.options = {
   shiftwidth = 3,
 }
 
+M.ui = {
+   theme = "catppuccin",
+}
+
 M.plugins = {
    install = {
      {
